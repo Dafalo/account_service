@@ -27,6 +27,6 @@ public class AccountController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addUserID(@PathVariable Integer userId, @RequestBody Long value) {
         service.addAmount(userId, value);
-        cache.remove(userId);
+        cache.merge(id, value, Long::sum);
     }
 }
