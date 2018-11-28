@@ -13,7 +13,7 @@ public class Balance {
     private Integer id;
 
     @Column(name = "Value")
-    private Long value = 0L;
+    private Long value;
 
     public Integer getId() {
         return id;
